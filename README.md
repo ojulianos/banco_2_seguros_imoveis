@@ -45,3 +45,4 @@ Linguagem de Programação C# .NET.<br>
 
 Back-end (Java + SpringBot)
 Front-end (HTML, CSS, JavaScript)
+Banco de Dados Microsoft SQL Server
