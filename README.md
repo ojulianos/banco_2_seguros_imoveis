@@ -11,6 +11,16 @@ Anderson Pizzolo - @Anderson-Pizzolo<br>
 Gabriel Angelo Kaufmann - @GabrielAKaufmann<br>
 
 ### Modelo Físico:
+Tabelas:
+- usuarios (tipo[adm, vendedor, recepcionista])
+- imoveis
+- clientes
+- apolices
+- apolice_cliente
+- sinistro
+- 
+
+
 Utilizado https://dbdiagram.io/<br>
 Arquivo fonte: <code>link pro arquivo</code><br>
 <code>Imagem</code>
@@ -32,3 +42,6 @@ Banco de dados utilizado SQL Server versão 2022 - Azure.<br>
 ### Código do sistema:
 Linguagem de Programação C# .NET.<br>
 <code>código fonte da aplicação</code>
+
+Back-end (Java + SpringBot)
+Front-end (HTML, CSS, JavaScript)
