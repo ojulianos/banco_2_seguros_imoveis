@@ -20,9 +20,7 @@ Tabelas:
 - apolice_itens (api_cod, api_apo_cod, api_descricao)
 - sinistro (sin_cod, sin_im_cod, sin_dt_cad, sin_hr_cad, sin_sit_cod)
 - sinistro_tipos (sit_cod, sit_nome, sit_pontos)
-- apolice_log
-- sinistro_log
-- imovel_log
+- logs
 - trigger, quando adicionado um novo sinistro a um imovel a pontuação deve ser acrescida em x pontos de acordo com tabela pontos_x_sinistro
 - function, calcula o valor da apolice com base na pontuação do cliente
 - procedure, gera um relatorio com todos os imoveis de um cliente e a quantidade de sinistros por imovel
@@ -31,7 +29,7 @@ Tabelas:
 
 Utilizado https://dbdiagram.io/<br>
 Arquivo fonte: <code>https://dbdiagram.io/d/65568d1e3be1495787288b46</code><br>
-<code>Imagem</code>
+![Diagrama ER](Diagrama%20ER.png)
   
 ### Dicionário de Dados:
 <code>Excel ou tabela do Github (markdown)</code>
