@@ -1,4 +1,4 @@
-package com.crudbd2.crudbd2;
+package com.unisatc.crudbd2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
