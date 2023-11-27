@@ -1,6 +1,6 @@
-import React from "react";
+//import React from "react";
 
-const Dashboard = () => {
+const Clientes = () => {
   return (
     <>
       <div className="relative overflow-x-auto mt-8 shadow-md sm:rounded-lg mx-auto">
@@ -31,8 +31,8 @@ const Dashboard = () => {
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <td className="px-6 py-4">Endereço Exemplo</td>
+            <tr className="bg-white border-b  dark:bg-gray-800 dark:border-gray-700">
+              <td className="px-6 py-4 ">Endereço Exemplo</td>
               <td className="px-6 py-4">Cliente Exemplo</td>
               <td className="px-6 py-4">01/01/2023</td>
               <td className="px-6 py-4">$100,000</td>
@@ -41,14 +41,14 @@ const Dashboard = () => {
               <td className="px-6 py-4 text-right">
                 <a
                   href="#"
-                  className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                  className=" font-medium text-blue-600 dark:text-blue-500 p-1 hover:underline"
                 >
                   Editar
                 </a>
                 &nbsp;
                 <a
                   href="#"
-                  className="font-medium text-red-600 dark:text-red-500 hover:underline"
+                  className=" font-medium text-red-600 dark:text-red-500 hover:underline"
                 >
                   Excluir
                 </a>
@@ -61,4 +61,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Clientes;
