@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import RootLayout from "./layouts/RootLayout";
-import Dashboard from "./routes/dashboard";
+import Clientes from "./routes/Clientes";
 import Imoveis from "./routes/Imoveis";
 
 const router = createBrowserRouter([
@@ -10,8 +10,8 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       {
-        path: "/",
-        element: <Dashboard />,
+        path: "/Clientes",
+        element: <Clientes />,
       },
       {
         path: "/imoveis",
@@ -22,10 +22,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-
-  return (
-      <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

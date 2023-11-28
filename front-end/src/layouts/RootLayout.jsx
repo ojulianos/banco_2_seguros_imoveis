@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
 const RootLayout = () => {
@@ -13,22 +12,31 @@ const RootLayout = () => {
               </button>
               <a href="/" className="flex items-center justify-between mr-4">
                 <img
-                  src="https://flowbite.s3.amazonaws.com/logo.svg"
-                  className="mr-3 h-8"
+                  src="https://cdn-icons-png.flaticon.com/512/6676/6676611.png"
+                  className="mr-3 h-12"
                   alt="Flowbite Logo"
                 />
                 <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                  Seguradoralider
+                  Seguradora Lider
                 </span>
               </a>
             </div>
             <div className="flex items-center lg:order-2">
-              <button></button>
+              <button>
+                <a href="/" className="flex items-center justify-between mr-4">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfknXTVp7d4nPioUwVODO3Bk8JHHyEGA8rjA&usqp=CAU"
+                    className="mr-3 h-12"
+                    alt="Perfil"
+                  />
+                  <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
+                </a>
+              </button>
 
               <button></button>
 
               <div
-                className="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
+                className="hidden z-50 my-4 w-56 text-base list-none bg-white  divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600 rounded-xl"
                 id="dropdown"
               ></div>
             </div>
@@ -44,7 +52,7 @@ const RootLayout = () => {
             <ul className="space-y-2">
               <li>
                 <NavLink
-                  to="/"
+                  to="/Clientes"
                   className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <span className="ml-3">Clientes</span>
@@ -71,7 +79,7 @@ const RootLayout = () => {
                   href="#"
                   className="flex items-center p-2 text-base font-medium text-gray-900 rounded-lg transition duration-75 hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-white group"
                 >
-                  <span className="ml-3">Help</span>
+                  <span className="ml-3">Ajuda</span>
                 </a>
               </li>
             </ul>

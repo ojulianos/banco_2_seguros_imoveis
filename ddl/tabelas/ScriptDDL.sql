@@ -1,12 +1,12 @@
 CREATE TABLE [imoveis] (
   [im_cod] int PRIMARY KEY,
   [im_valor] decimal,
-  [im_logradouro] nvarchar(255),
-  [im_bairro] nvarchar(255),
-  [im_cidade] nvarchar(255),
-  [im_uf] nvarchar(255),
+  [im_logradouro] VARCHAR(255),
+  [im_bairro] VARCHAR(255),
+  [im_cidade] VARCHAR(255),
+  [im_uf] VARCHAR(255),
   [im_numero] int,
-  [im_tipo] nvarchar(255),
+  [im_tipo] VARCHAR(255),
   [im_val_iptu] decimal
 )
 GO
@@ -77,18 +77,18 @@ CREATE TABLE [sinistro_tipo] (
 GO
 
 CREATE TABLE [log] (
-  [tabela] VARCHAR,
-  [data_cadstro] DATE,
-  [usuario] VARCHAR,
-  [tipo_operacao] VARCHAR,
-  [operacao] text
+  [tabela] VARCHAR(255),
+  [data_cadastro] DATE,
+  [usuario] VARCHAR(255),
+  [tipo_operacao] VARCHAR(50),
+  [operacao] VARCHAR(MAX)
 )
 GO
 
 ALTER TABLE [imovel_fotos] ADD FOREIGN KEY ([imf_imovel_cod]) REFERENCES [imoveis] ([im_cod])
 GO
 
-ALTER TABLE [sinistro] ADD FOREIGN KEY ([sin_im_cod]) REFERENCES [imoveis] ([im_cod])
+ALTER TABLE [sinistro] ADD FOREIGN KEY ([sin_tipo_cod]) REFERENCES [sinistro_tipo] ([sit_cod])
 GO
 
 ALTER TABLE [apolices] ADD FOREIGN KEY ([apo_cli_cod]) REFERENCES [clientes] ([cli_cod])
@@ -103,5 +103,5 @@ GO
 ALTER TABLE [apolice_itens] ADD FOREIGN KEY ([api_apo_cod]) REFERENCES [apolices] ([apo_cod])
 GO
 
-ALTER TABLE [apolices] ADD FOREIGN KEY ([apo_dt_cad]) REFERENCES [apolices] ([apo_im_cod])
+ALTER TABLE [apolices] ADD FOREIGN KEY ([apo_im_cod]) REFERENCES [imoveis] ([im_cod])
 GO
