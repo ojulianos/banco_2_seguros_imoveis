@@ -1,1 +1,27 @@
-
+INSERT INTO clientes ([cli_cod], [cli_dt_cad], [cli_dt_alt], [cli_nome], [cli_documento], [cli_documento2], [cli_logradouro], [cli_bairro], [cli_cidade], [cli_uf], [cli_numero], [cli_telefone], [cli_telefone2], [cli_pai], [cli_mae], [cli_rendimento])
+VALUES
+    (1, '2023-01-01', '2023-01-05', 'Maria Silva', '12345678901', '98765432101', 'Rua das Flores', 'Boa Viagem', 'Recife', 'PE', 10, '999999999', '888888888', 'Pai 1', 'Mãe 1', 5000),
+    (2, '2023-01-02', '2023-01-06', 'João Santos', '98765432101', '12345678901', 'Avenida dos Girassóis', 'Ponta Negra', 'Natal', 'RN', 15, '777777777', '666666666', 'Pai 2', 'Mãe 2', 6000),
+    (3, '2023-01-03', '2023-01-07', 'Ana Souza', '45678901201', '21098765401', 'Rua das Acácias', 'Ipanema', 'Rio de Janeiro', 'RJ', 20, '555555555', '444444444', 'Pai 3', 'Mãe 3', 7000),
+    (4, '2023-01-04', '2023-01-08', 'Pedro Oliveira', '78901234501', '32109876501', 'Avenida dos Lírios', 'Boa Vista', 'Porto Alegre', 'RS', 25, '333333333', '222222222', 'Pai 4', 'Mãe 4', 8000),
+    (5, '2023-01-05', '2023-01-09', 'Carla Lima', '23456789001', '54321098701', 'Rua das Rosas', 'Alphaville', 'Barueri', 'SP', 30, '111111111', '000000000', 'Pai 5', 'Mãe 5', 9000),
+    (6, '2023-01-06', '2023-01-10', 'Marcos Vieira', '56789012301', '76543210901', 'Avenida dos Cravos', 'Boa Esperança', 'Marabá', 'PA', 35, '222222222', '333333333', 'Pai 6', 'Mãe 6', 10000),
+    (7, '2023-01-07', '2023-01-11', 'Lúcia Ferreira', '89012345601', '10987654301', 'Rua das Orquídeas', 'Praia Grande', 'São Paulo', 'SP', 40, '888888888', '999999999', 'Pai 7', 'Mãe 7', 11000),
+    (8, '2023-01-08', '2023-01-12', 'Rafaela Gomes', '01234567801', '21098765432', 'Avenida das Hortênsias', 'Copacabana', 'Rio de Janeiro', 'RJ', 45, '444444444', '555555555', 'Pai 8', 'Mãe 8', 12000),
+    (9, '2023-01-09', '2023-01-13', 'Fernando Costa', '12345678910', '43210987654', 'Rua dos Jasmins', 'Itaim Bibi', 'São Paulo', 'SP', 50, '999999999', '888888888', 'Pai 9', 'Mãe 9', 13000),
+    (10, '2023-01-10', '2023-01-14', 'Juliana Pereira', '23456789101', '98765432109', 'Avenida das Tulipas', 'Setor Bueno', 'Goiânia', 'GO', 55, '777777777', '666666666', 'Pai 10', 'Mãe 10', 14000),
+    (11, '2023-01-11', '2023-01-15', 'Anderson Rodrigues', '34567891012', '87654321098', 'Rua das Violetas', 'Bessa', 'João Pessoa', 'PB', 60, '666666666', '777777777', 'Pai 11', 'Mãe 11', 15000),
+    (12, '2023-01-15', '2023-01-19', 'Roberto Santos', '78910111234', '87654321098', 'Avenida das Violetas', 'Boa Vista', 'Recife', 'PE', 22, '333333333', '444444444', 'Pai 12', 'Mãe 12', 19000),
+    (13, '2023-01-16', '2023-01-20', 'Carolina Lima', '89101112134', '76543210987', 'Rua dos Cravos', 'Aldeota', 'Fortaleza', 'CE', 45, '555555555', '666666666', 'Pai 13', 'Mãe 13', 20000),
+    (14, '2023-01-17', '2023-01-21', 'Lucas Oliveira', '91011121345', '65432109876', 'Avenida dos Jasmins', 'Boa Esperança', 'Manaus', 'AM', 33, '777777777', '888888888', 'Pai 14', 'Mãe 14', 21000),
+    (15, '2023-01-18', '2023-01-22', 'Marina Costa', '10111213145', '54321098765', 'Rua das Tulipas', 'Centro', 'Goiânia', 'GO', 55, '999999999', '000000000', 'Pai 15', 'Mãe 15', 22000),
+    (16, '2023-01-19', '2023-01-23', 'Henrique Silva', '11121314156', '43210987654', 'Avenida dos Crisântemos', 'São Mateus', 'São Paulo', 'SP', 88, '111111111', '222222222', 'Pai 16', 'Mãe 16', 23000),
+    (17, '2023-01-20', '2023-01-24', 'Tatiane Souza', '12131415167', '32109876543', 'Rua das Orquídeas', 'Boa Viagem', 'Recife', 'PE', 77, '333333333', '444444444', 'Pai 17', 'Mãe 17', 24000),
+    (18, '2023-01-21', '2023-01-25', 'Ricardo Alves', '13141516178', '21098765432', 'Avenida dos Lírios', 'Alphaville', 'Barueri', 'SP', 66, '555555555', '666666666', 'Pai 18', 'Mãe 18', 25000),
+    (19, '2023-01-22', '2023-01-26', 'Fernanda Pereira', '14151617189', '10987654321', 'Rua das Rosas', 'Centro', 'Goiânia', 'GO', 44, '777777777', '888888888', 'Pai 19', 'Mãe 19', 26000),
+    (20, '2023-01-23', '2023-01-27', 'Guilherme Mendes', '15161718190', '98765432109', 'Avenida das Flores', 'Ipanema', 'Rio de Janeiro', 'RJ', 99, '999999999', '000000000', 'Pai 20', 'Mãe 20', 27000),
+    (21, '2023-01-24', '2023-01-28', 'Amanda Ferreira', '16171819200', '87654321098', 'Rua dos Cravos', 'Barra da Tijuca', 'Rio de Janeiro', 'RJ', 11, '111111111', '222222222', 'Pai 21', 'Mãe 21', 28000),
+    (22, '2023-01-25', '2023-01-29', 'Paulo Santos', '17181920011', '76543210987', 'Avenida dos Jasmins', 'Boa Esperança', 'Manaus', 'AM', 22, '333333333', '444444444', 'Pai 22', 'Mãe 22', 29000),
+    (23, '2023-01-26', '2023-01-30', 'Larissa Costa', '18192001122', '65432109876', 'Rua das Tulipas', 'Setor Bueno', 'Goiânia', 'GO', 33, '555555555', '666666666', 'Pai 23', 'Mãe 23', 30000),
+    (24, '2023-01-27', '2023-01-31', 'Felipe Oliveira', '19200112233', '54321098765', 'Avenida dos Crisântemos', 'Boa Vista', 'Recife', 'PE', 44, '777777777', '888888888', 'Pai 24', 'Mãe 24', 31000),
+    (25, '2023-01-28', '2023-02-01', 'Carolina Lima', '20011223344', '43210987654', 'Rua das Orquídeas', 'Aldeota', 'Fortaleza', 'CE', 55, '999999999', '000000000', 'Pai 24', 'Mãe 24', 31000);

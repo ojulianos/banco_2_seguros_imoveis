@@ -36,15 +36,20 @@ Arquivo fonte: <code>https://dbdiagram.io/d/65568d1e3be1495787288b46</code><br>
 
 ### Scripts DDL Criação do Database:
 Banco de dados utilizado SQL Server versão 2022 - Azure.<br>
-[ScriptDDL](tabelas/ScriptDDL.sql)
+[ScriptDDL](ddl/tabelas/ScriptDDL.sql)
 
 ### Scripts Popula tabelas:
 Banco de dados utilizado SQL Server versão 2022 - Azure.<br>
-[ScriptDDL](dml/ScriptDML.sql)
+[ScriptDMS](dml/ScriptDML.sql)
 
 ### Objetos de BD (stored procedure, triggers e functions):
-[ScriptDDL](ddl/function_procedure_trigger.sql)
-  
+[Stored Procedures](ddl/procedure.sql)
+
+[Functions](ddl/function.sql)
+
+[Triggers](ddl/trigger.sql)
+
+
 ### Código do sistema:
 Linguagem de Programação C# .NET.<br>
 <code>código fonte da aplicação</code>
