@@ -1,8 +1,10 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 
 import RootLayout from "./layouts/RootLayout";
 import Clientes from "./routes/Clientes";
 import Imoveis from "./routes/Imoveis";
+import ImoveisCreateForm from "./routes/ImoveisCreateForm";
+import ClienteCreateForm from "./routes/clienteCreateForm";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,14 @@ const router = createBrowserRouter([
       {
         path: "/imoveis",
         element: <Imoveis />,
+      },
+      {
+        path: "/ClienteCreateForm",
+        element: <ClienteCreateForm />,
+      },
+      {
+        path: "/ImoveisCreateForm",
+        element: <ImoveisCreateForm />,
       },
     ],
   },
