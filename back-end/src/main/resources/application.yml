@@ -1,14 +1,28 @@
+# spring:
+#  datasource:
+#    url:
+#    username:
+#    password:
+#    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.SQLServer2012Dialect
+#      show-sql: false
 
-spring:
-  datasource:
-    url:
-    username:
-    password:
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.SQLServer2012Dialect
-      show-sql: false
+
+# Configurações do banco de dados SQL Server
+spring.datasource.url=jdbc:sqlserver://XXXXXXXXXXXXXXXXXX.database.windows.net;databaseName=XXXXXXXXXXXXXXX
+spring.datasource.username=XXXXXXXXXXXXX
+spring.datasource.password=XXXXXXXXXXX
+spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+  
+  # Configurações JPA
+spring.jpa.database=SQL_SERVER
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+  
+  # Porta do servidor
+server.port=8080
