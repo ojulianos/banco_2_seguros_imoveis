@@ -11,8 +11,14 @@ public class Apolice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer apo_cod;
-    private Integer apo_im_cod;
-    private Integer apo_cli_cod;
+
+    @ManyToOne
+    @JoinColumn(name = "apo_im_cod")
+    private Imoveis apo_im_cod;
+
+    @ManyToOne
+    @JoinColumn(name = "apo_cli_cod")
+    private Cliente apo_cli_cod;
     private Date apo_dt_cad;
     private Date apo_dt_alt;
     private Date apo_dt_ini_vigencia;
@@ -23,7 +29,8 @@ public class Apolice {
     public Apolice() {
     }
 
-    public Apolice(Integer apo_im_cod, Integer apo_cli_cod, Date apo_dt_cad, Date apo_dt_alt, Date apo_dt_ini_vigencia, Date apo_dt_fim_vigencia, Float apo_valor_cobertura, Float apo_valor_franquia) {
+    public Apolice(Integer apo_cod, Imoveis apo_im_cod, Cliente apo_cli_cod, Date apo_dt_cad, Date apo_dt_alt, Date apo_dt_ini_vigencia, Date apo_dt_fim_vigencia, Float apo_valor_cobertura, Float apo_valor_franquia) {
+        this.apo_cod = apo_cod;
         this.apo_im_cod = apo_im_cod;
         this.apo_cli_cod = apo_cli_cod;
         this.apo_dt_cad = apo_dt_cad;
@@ -42,19 +49,19 @@ public class Apolice {
         this.apo_cod = apo_cod;
     }
 
-    public Integer getApo_im_cod() {
+    public Imoveis getApo_im_cod() {
         return apo_im_cod;
     }
 
-    public void setApo_im_cod(Integer apo_im_cod) {
+    public void setApo_im_cod(Imoveis apo_im_cod) {
         this.apo_im_cod = apo_im_cod;
     }
 
-    public Integer getApo_cli_cod() {
+    public Cliente getApo_cli_cod() {
         return apo_cli_cod;
     }
 
-    public void setApo_cli_cod(Integer apo_cli_cod) {
+    public void setApo_cli_cod(Cliente apo_cli_cod) {
         this.apo_cli_cod = apo_cli_cod;
     }
 

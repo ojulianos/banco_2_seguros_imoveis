@@ -2,10 +2,11 @@ package com.unisatc.crudbd2.model;
 
 import jakarta.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "cliente")
+@Table(name = "clientes")
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,10 +27,14 @@ public class Cliente {
     private String cli_mae;
     private Float cli_rendimento;
 
+    @OneToMany(mappedBy = "apo_cli_cod")
+    private List<Apolice> apolices;
+
     public Cliente() {
     }
 
-    public Cliente(Date cli_dt_cad, Date cli_dt_alt, String cli_nome, String cli_documento, String cli_documento2, String cli_logradouro, String cli_bairro, String cli_cidade, String cli_uf, Integer cli_numero, String cli_telefone, String cli_telefone2, String cli_pai, String cli_mae, Float cli_rendimento) {
+    public Cliente(Integer cli_cod, Date cli_dt_cad, Date cli_dt_alt, String cli_nome, String cli_documento, String cli_documento2, String cli_logradouro, String cli_bairro, String cli_cidade, String cli_uf, Integer cli_numero, String cli_telefone, String cli_telefone2, String cli_pai, String cli_mae, Float cli_rendimento, List<Apolice> apolices) {
+        this.cli_cod = cli_cod;
         this.cli_dt_cad = cli_dt_cad;
         this.cli_dt_alt = cli_dt_alt;
         this.cli_nome = cli_nome;
@@ -45,6 +50,7 @@ public class Cliente {
         this.cli_pai = cli_pai;
         this.cli_mae = cli_mae;
         this.cli_rendimento = cli_rendimento;
+        this.apolices = apolices;
     }
 
     public Integer getCli_cod() {
@@ -175,17 +181,25 @@ public class Cliente {
         this.cli_rendimento = cli_rendimento;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(cli_cod, cli_dt_cad, cli_dt_alt, cli_nome, cli_documento, cli_documento2, cli_logradouro, cli_bairro, cli_cidade, cli_uf, cli_numero, cli_telefone, cli_telefone2, cli_pai, cli_mae, cli_rendimento);
+    public List<Apolice> getApolices() {
+        return apolices;
+    }
+
+    public void setApolices(List<Apolice> apolices) {
+        this.apolices = apolices;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Cliente cliente = (Cliente) obj;
-        return Objects.equals(cli_cod, cliente.cli_cod) && Objects.equals(cli_dt_cad, cliente.cli_dt_cad) && Objects.equals(cli_dt_alt, cliente.cli_dt_alt) && Objects.equals(cli_nome, cliente.cli_nome) && Objects.equals(cli_documento, cliente.cli_documento) && Objects.equals(cli_documento2, cliente.cli_documento2) && Objects.equals(cli_logradouro, cliente.cli_logradouro) && Objects.equals(cli_bairro, cliente.cli_bairro) && Objects.equals(cli_cidade, cliente.cli_cidade) && Objects.equals(cli_uf, cliente.cli_uf) && Objects.equals(cli_numero, cliente.cli_numero) && Objects.equals(cli_telefone, cliente.cli_telefone) && Objects.equals(cli_telefone2, cliente.cli_telefone2) && Objects.equals(cli_pai, cliente.cli_pai) && Objects.equals(cli_mae, cliente.cli_mae) && Objects.equals(cli_rendimento, cliente.cli_rendimento);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cliente cliente = (Cliente) o;
+        return Objects.equals(cli_cod, cliente.cli_cod) && Objects.equals(cli_dt_cad, cliente.cli_dt_cad) && Objects.equals(cli_dt_alt, cliente.cli_dt_alt) && Objects.equals(cli_nome, cliente.cli_nome) && Objects.equals(cli_documento, cliente.cli_documento) && Objects.equals(cli_documento2, cliente.cli_documento2) && Objects.equals(cli_logradouro, cliente.cli_logradouro) && Objects.equals(cli_bairro, cliente.cli_bairro) && Objects.equals(cli_cidade, cliente.cli_cidade) && Objects.equals(cli_uf, cliente.cli_uf) && Objects.equals(cli_numero, cliente.cli_numero) && Objects.equals(cli_telefone, cliente.cli_telefone) && Objects.equals(cli_telefone2, cliente.cli_telefone2) && Objects.equals(cli_pai, cliente.cli_pai) && Objects.equals(cli_mae, cliente.cli_mae) && Objects.equals(cli_rendimento, cliente.cli_rendimento) && Objects.equals(apolices, cliente.apolices);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cli_cod, cli_dt_cad, cli_dt_alt, cli_nome, cli_documento, cli_documento2, cli_logradouro, cli_bairro, cli_cidade, cli_uf, cli_numero, cli_telefone, cli_telefone2, cli_pai, cli_mae, cli_rendimento, apolices);
     }
 }
 
