@@ -10,7 +10,7 @@ const Clientes = () => {
   const [clientes, setClientes] = useState(defaultValue);
 
   const getApiData = async () => {
-    const response = await fetch('https://cryptic-stream-94767-b9f22ccd744b.herokuapp.com/1',  {method: 'GET'})
+    const response = await fetch('https://banco2segurosimoveis-production.up.railway.app/clientes',  {method: 'GET'})
     .then(response => response.json())
     .then(response => {
       setClientes(response.data)
@@ -26,7 +26,7 @@ const Clientes = () => {
   function deleteItem(id) {
     const options = {method: 'DELETE'};
 
-    fetch(`https://cryptic-stream-94767-b9f22ccd744b.herokuapp.com/${id}`, options)
+    fetch(`https://banco2segurosimoveis-production.up.railway.app/clientes/${id}`, options)
       .then(response => response.json())
       .then(response => {
         alert('Cliente excluído com sucesso!')
@@ -52,22 +52,22 @@ const Clientes = () => {
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-white">
             <tr>
               <th scope="col" className="px-2 py-2">
-                Endereço
+                Nome
               </th>
               <th scope="col" className="px-2 py-2">
-                Cliente
+                Documento
               </th>
               <th scope="col" className="px-2 py-2">
-                Data Fim
+                Bairro
               </th>
               <th scope="col" className="px-2 py-2">
-                Valor Cobertura
+                Cidade
               </th>
               <th scope="col" className="px-2 py-2">
-                Valor Franquia
+                Telefone
               </th>
               <th scope="col" className="px-2 py-2">
-                Qtd Sinistro
+                Rendimento
               </th>
               <th scope="col" className="px-6 py-3">
                 <span className="sr-only">edit</span>
@@ -77,17 +77,16 @@ const Clientes = () => {
           <tbody>
           
           {clientes.map((cliente) => (
-
-            <tr className="bg-white border-b  dark:bg-gray-800 dark:border-gray-700" key={cliente.id}>
-              <td className="px-6 py-4 ">{cliente.Endereço}</td>
-              <td className="px-6 py-4">{cliente.Cliente}</td>
-              <td className="px-6 py-4">{cliente.DataFim}</td>
-              <td className="px-6 py-4">{cliente.ValorCobertura}</td>
-              <td className="px-6 py-4">{cliente.ValorFranquia}</td>
-              <td className="px-6 py-4">{cliente.QtdSinistro}</td>
+            <tr className="bg-white border-b  dark:bg-gray-800 dark:border-gray-700" key={cliente.cli_cod}>
+              <td className="px-6 py-4 ">{cliente.cli_nome}</td>
+              <td className="px-6 py-4">{cliente.cli_documento}</td>
+              <td className="px-6 py-4">{cliente.cli_bairro}</td>
+              <td className="px-6 py-4">{cliente.cli_cidade}</td>
+              <td className="px-6 py-4">{cliente.cli_telefone}</td>
+              <td className="px-6 py-4">{cliente.cli_rendimento}</td>
               <td className="px-6 py-4 text-right">
               <NavLink
-                    to={`/clienteEdit/${cliente.id}`}
+                    to={`/clienteEdit/${cliente.cli_cod}`}
                     className="font-medium p-1 text-blue-600 dark:text-blue-500 hover:underline"
                   >
                     Editar
@@ -97,10 +96,10 @@ const Clientes = () => {
                     onClick={(e)=>{
                       e.stopPropagation();
                       e.preventDefault();
-                      deleteItem(cliente.id);
+                      deleteItem(cliente.cli_cod);
                    }}
                    
-                    // to={`/clienteDelete/${cliente.id}`}
+                    // to={`/clienteDelete/${cliente.cli_cod}`}
                     className="font-medium text-red-600 dark:text-red-500 hover:underline"
                   >
                     Excluir
