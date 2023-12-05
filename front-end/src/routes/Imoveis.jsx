@@ -8,7 +8,7 @@ const Imoveis = () => {
   const [clientes, setClientes] = useState(defaultValue);
 
   const getApiData = async () => {
-    const response = await fetch('https://cryptic-stream-94767-b9f22ccd744b.herokuapp.com/1',  {method: 'GET'})
+    const response = await fetch('https://localhost:8080/',  {method: 'GET'})
     .then(response => response.json())
     .then(response => {
       setClientes(response.data)
@@ -67,30 +67,31 @@ const Imoveis = () => {
             </tr>
           </thead>
           <tbody>
+            
             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
               <td className="px-6 py-4">{Imoveis.Codigo}</td>
               <td className="px-6 py-4">{Imoveis.Valor}</td>
               <td className="px-6 py-4">{Imoveis.Logradouro}</td>
               <td className="px-6 py-4">{Imoveis.Bairro}</td>
               <td className="px-6 py-4">{Imoveis.Cidade}</td>
-              <td className="px-6 py-4">{Imoveis.UF}</td>
+              <td className="px-6 py-4">{Imoveis.uf}</td>
               <td className="px-6 py-4">{Imoveis.Numero}</td>
               <td className="px-6 py-4">{Imoveis.Tipo}</td>
               <td className="px-6 py-4">{Imoveis.ValorIPTU}</td>
               <td className="px-6 py-4 text-right">
-                <a
-                  href="#"
+                <NavLink
+                  to="/ImoveisCreateForm"
                   className="font-medium p-1 text-blue-600 dark:text-blue-500 hover:underline"
                 >
                   Editar
-                </a>
+                </NavLink>
                 &nbsp;
-                <a
+                <NavLink
                   href="#"
                   className="font-medium text-red-600 dark:text-red-500 hover:underline"
                 >
                   Excluir
-                </a>
+                </NavLink>
               </td>
             </tr>
           </tbody>
