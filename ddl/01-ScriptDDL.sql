@@ -158,9 +158,9 @@ REFERENCES [sinistro_tipo] ([sit_cod])
 GO
 
 -- INDICES
-DROP INDEX IF EXISTS idx_apolice_itens_apo_cod ON apolices
+DROP INDEX IF EXISTS idx_apolice_imovel_cliente ON apolices
 GO
-CREATE INDEX idx_apolice_itens_apo_cod	 ON apolices (apo_cod, apo_im_cod, apo_cli_cod)
+CREATE INDEX idx_apolice_imovel_cliente	 ON apolices (apo_cod, apo_im_cod, apo_cli_cod)
 GO
 
 DROP INDEX IF EXISTS idx_cliente_documento ON clientes
@@ -172,4 +172,5 @@ DROP INDEX IF EXISTS idx_sinistro_imovel ON sinistro
 GO
 CREATE INDEX idx_sinistro_imovel ON sinistro (sin_cod, sin_im_cod)
 GO
+
 
