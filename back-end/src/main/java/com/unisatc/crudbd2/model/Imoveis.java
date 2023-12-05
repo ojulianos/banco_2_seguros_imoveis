@@ -23,6 +23,7 @@ public class Imoveis {
     @OneToMany(mappedBy = "apo_im_cod")
     private List<Apolice> apolices;
 
+    public Imoveis(){}
     public Imoveis(Integer im_cod, Double im_valor, String im_logradouro, String im_bairro, String im_cidade, String im_uf, Integer im_numero, String im_tipo, Double im_val_iptu, List<Apolice> apolices) {
         this.im_cod = im_cod;
         this.im_valor = im_valor;

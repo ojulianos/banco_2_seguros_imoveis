@@ -1,6 +1,10 @@
 package com.unisatc.crudbd2.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -11,6 +15,7 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cli_cod;
+   // @Temporal(TemporalType.TIMESTAMP)
     private Date cli_dt_cad;
     private Date cli_dt_alt;
     private String cli_nome;
@@ -28,6 +33,7 @@ public class Cliente {
     private Float cli_rendimento;
 
     @OneToMany(mappedBy = "apo_cli_cod")
+    @JsonIgnore
     private List<Apolice> apolices;
 
     public Cliente() {

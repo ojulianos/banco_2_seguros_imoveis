@@ -1,5 +1,6 @@
 package com.unisatc.crudbd2.controllers;
 
+import com.unisatc.crudbd2.dto.ApoliceDTO;
 import com.unisatc.crudbd2.model.Apolice;
 import com.unisatc.crudbd2.services.ApoliceService;
 import org.hibernate.event.internal.DefaultPersistOnFlushEventListener;
@@ -18,22 +19,22 @@ public class ApoliceController {
     ApoliceService service;
 
     @GetMapping(value ="/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Apolice findById(@PathVariable(value = "id") Integer id){
+    public ApoliceDTO findById(@PathVariable(value = "id") Integer id){
         return service.findById(id);
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Apolice> findAll(){
+    public List<ApoliceDTO> findAll(){
         return service.findAll();
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Apolice create(@RequestBody Apolice apolice){
+    public ApoliceDTO create(@RequestBody ApoliceDTO apolice){
         return service.create(apolice);
     }
 
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Apolice update(@RequestBody Apolice apolice){
+    public ApoliceDTO update(@RequestBody ApoliceDTO apolice){
         return service.update(apolice);
     }
 

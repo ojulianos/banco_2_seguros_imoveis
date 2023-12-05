@@ -5,13 +5,13 @@ cors:
   originPatterns: "http://localhost:5173/"
 spring:
   datasource:
-    url: jdbc:sqlserver://localhost;databaseName=bd2-api;encrypt=true;trustServerCertificate=true;
-    username: sa
-    password: admin123
+    url: jdbc:sqlserver://ojulianos.database.windows.net:1433;databaseName=satc;encrypt=true;trustServerCertificate=true;
+    username: juliano
+    password: satc@2022
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     properties:
       hibernate:
         dialect: org.hibernate.dialect.SQLServer2012Dialect

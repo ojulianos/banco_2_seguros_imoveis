@@ -1,26 +1,12 @@
-package com.unisatc.crudbd2.model;
-
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.*;
+package com.unisatc.crudbd2.dto;
 
 import java.util.Date;
 import java.util.Objects;
 
-@Entity
-@Table(name = "apolices")
-public class Apolice {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ApoliceDTO {
     private Integer apo_cod;
-
-    @ManyToOne
-    @JoinColumn(name = "apo_im_cod")
-    private Imoveis apo_im_cod;
-
-    @ManyToOne
-    @JoinColumn(name = "apo_cli_cod")
-    @JsonManagedReference
-    private Cliente apo_cli_cod;
+    private Integer apo_im_cod;
+    private Integer apo_cli_cod;
     private Date apo_dt_cad;
     private Date apo_dt_alt;
     private Date apo_dt_inicio_vigencia;
@@ -28,10 +14,11 @@ public class Apolice {
     private Float apo_valor_cobertura;
     private Float apo_valor_franquia;
 
-    public Apolice() {
+
+    public ApoliceDTO() {
     }
 
-    public Apolice(Integer apo_cod, Imoveis apo_im_cod, Cliente apo_cli_cod, Date apo_dt_cad, Date apo_dt_alt, Date apo_dt_ini_vigencia, Date apo_dt_fim_vigencia, Float apo_valor_cobertura, Float apo_valor_franquia) {
+    public ApoliceDTO(Integer apo_cod, Integer apo_im_cod, Integer apo_cli_cod, Date apo_dt_cad, Date apo_dt_alt, Date apo_dt_ini_vigencia, Date apo_dt_fim_vigencia, Float apo_valor_cobertura, Float apo_valor_franquia) {
         this.apo_cod = apo_cod;
         this.apo_im_cod = apo_im_cod;
         this.apo_cli_cod = apo_cli_cod;
@@ -51,19 +38,19 @@ public class Apolice {
         this.apo_cod = apo_cod;
     }
 
-    public Imoveis getApo_im_cod() {
+    public Integer getApo_im_cod() {
         return apo_im_cod;
     }
 
-    public void setApo_im_cod(Imoveis apo_im_cod) {
+    public void setApo_im_cod(Integer apo_im_cod) {
         this.apo_im_cod = apo_im_cod;
     }
 
-    public Cliente getApo_cli_cod() {
+    public Integer getApo_cli_cod() {
         return apo_cli_cod;
     }
 
-    public void setApo_cli_cod(Cliente apo_cli_cod) {
+    public void setApo_cli_cod(Integer apo_cli_cod) {
         this.apo_cli_cod = apo_cli_cod;
     }
 
@@ -119,12 +106,14 @@ public class Apolice {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Apolice apolice = (Apolice) o;
-        return Objects.equals(apo_cod, apolice.apo_cod) && Objects.equals(apo_im_cod, apolice.apo_im_cod) && Objects.equals(apo_cli_cod, apolice.apo_cli_cod) && Objects.equals(apo_dt_cad, apolice.apo_dt_cad) && Objects.equals(apo_dt_alt, apolice.apo_dt_alt) && Objects.equals(apo_dt_inicio_vigencia, apolice.apo_dt_inicio_vigencia) && Objects.equals(apo_dt_fim_vigencia, apolice.apo_dt_fim_vigencia) && Objects.equals(apo_valor_cobertura, apolice.apo_valor_cobertura) && Objects.equals(apo_valor_franquia, apolice.apo_valor_franquia);
+        ApoliceDTO that = (ApoliceDTO) o;
+        return Objects.equals(apo_cod, that.apo_cod) && Objects.equals(apo_im_cod, that.apo_im_cod) && Objects.equals(apo_cli_cod, that.apo_cli_cod) && Objects.equals(apo_dt_cad, that.apo_dt_cad) && Objects.equals(apo_dt_alt, that.apo_dt_alt) && Objects.equals(apo_dt_inicio_vigencia, that.apo_dt_inicio_vigencia) && Objects.equals(apo_dt_fim_vigencia, that.apo_dt_fim_vigencia) && Objects.equals(apo_valor_cobertura, that.apo_valor_cobertura) && Objects.equals(apo_valor_franquia, that.apo_valor_franquia);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(apo_cod, apo_im_cod, apo_cli_cod, apo_dt_cad, apo_dt_alt, apo_dt_inicio_vigencia, apo_dt_fim_vigencia, apo_valor_cobertura, apo_valor_franquia);
     }
+
+    // outros métodos, se necessário
 }
