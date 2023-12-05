@@ -20,11 +20,19 @@ const router = createBrowserRouter([
         element: <Imoveis />,
       },
       {
-        path: "/ClienteCreateForm",
+        path: "/clienteCreate",
         element: <ClienteCreateForm />,
       },
       {
-        path: "/ImoveisCreateForm",
+        path: "/imovelCreate",
+        element: <ImoveisCreateForm />,
+      },
+      {
+        path: "/clienteEdit/:id",
+        element: <ClienteCreateForm />,
+      },
+      {
+        path: "/imovelEdit/:id",
         element: <ImoveisCreateForm />,
       },
     ],

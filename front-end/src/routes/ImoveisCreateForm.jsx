@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { NavLink, useParams } from "react-router-dom";
 
 const ImoveisCreateForm = ({ onClose, onSave }) => {
+
+  const { id } = useParams();
+
   const [formData, setFormData] = useState({
     codigo: "",
     valor: "",
@@ -152,13 +156,12 @@ const ImoveisCreateForm = ({ onClose, onSave }) => {
           </div>
 
           <div className="flex justify-end">
-            <button
-              type="button"
-              onClick={onClose}
+            <NavLink
+              to="/imoveis"
               className="mr-2 p-2 border rounded"
             >
               Cancelar
-            </button>
+            </NavLink>
             <button
               type="submit"
               className="p-2 bg-blue-500 text-white rounded"

@@ -10,7 +10,7 @@ const Clientes = () => {
   const [clientes, setClientes] = useState(defaultValue);
 
   const getApiData = async () => {
-    const response = await fetch('https://localhost:8080/',  {method: 'GET'})
+    const response = await fetch('https://cryptic-stream-94767-b9f22ccd744b.herokuapp.com/1',  {method: 'GET'})
     .then(response => response.json())
     .then(response => {
       setClientes(response.data)
@@ -23,6 +23,18 @@ const Clientes = () => {
     getApiData();
   }, []); 
 
+  function deleteItem(id) {
+    const options = {method: 'DELETE'};
+
+    fetch(`https://cryptic-stream-94767-b9f22ccd744b.herokuapp.com/${id}`, options)
+      .then(response => response.json())
+      .then(response => {
+        alert('Cliente excluído com sucesso!')
+        console.log(response)
+      })
+      .catch(err => console.error(err));
+  }
+
   
   
   return (
@@ -30,7 +42,7 @@ const Clientes = () => {
     <>
     
     <div className="mt-8 mb-8 mr-8">
-        <NavLink to="/clienteCreateForm" className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
+        <NavLink to="/clienteCreate" className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">
           Cadastrar Novo Cliente
         </NavLink>
       </div>
@@ -63,31 +75,34 @@ const Clientes = () => {
           </thead>
           <tbody>
           
+          {clientes.map((cliente) => (
 
-          <tr className="bg-white border-b  dark:bg-gray-800 dark:border-gray-700">
-            <td className="px-6 py-4 ">{clientes.Endereço}</td>
-            <td className="px-6 py-4">{clientes.Cliente}</td>
-            <td className="px-6 py-4">{Clientes.DataFim}</td>
-            <td className="px-6 py-4">{Clientes.ValorCobertura}</td>
-            <td className="px-6 py-4">{Clientes.ValorFranquia}</td>
-            <td className="px-6 py-4">{Clientes.QtdSinistro}</td>
-            <td className="px-6 py-4 text-right">
-            <NavLink
-                  to="/clienteCreateForm"
-                  className="font-medium p-1 text-blue-600 dark:text-blue-500 hover:underline"
-                >
-                  Editar
-                </NavLink>
-                &nbsp;
-                <a
-                  href="#"
-                  className="font-medium text-red-600 dark:text-red-500 hover:underline"
-                >
-                  Excluir
-                </a>
-            </td>
-          </tr>
-       
+            <tr className="bg-white border-b  dark:bg-gray-800 dark:border-gray-700" key={cliente.id}>
+              <td className="px-6 py-4 ">{cliente.Endereço}</td>
+              <td className="px-6 py-4">{cliente.Cliente}</td>
+              <td className="px-6 py-4">{cliente.DataFim}</td>
+              <td className="px-6 py-4">{cliente.ValorCobertura}</td>
+              <td className="px-6 py-4">{cliente.ValorFranquia}</td>
+              <td className="px-6 py-4">{cliente.QtdSinistro}</td>
+              <td className="px-6 py-4 text-right">
+              <NavLink
+                    to={`/clienteEdit/${cliente.id}`}
+                    className="font-medium p-1 text-blue-600 dark:text-blue-500 hover:underline"
+                  >
+                    Editar
+                  </NavLink>
+                  &nbsp;
+                  <a
+                    onClick={deleteItem(cliente.id)}
+                    // to={`/clienteDelete/${cliente.id}`}
+                    className="font-medium text-red-600 dark:text-red-500 hover:underline"
+                  >
+                    Excluir
+                  </a>
+              </td>
+            </tr>
+
+          ))}
             
           </tbody>
         </table>
