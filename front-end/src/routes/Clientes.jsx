@@ -30,6 +30,7 @@ const Clientes = () => {
       .then(response => response.json())
       .then(response => {
         alert('Cliente excluído com sucesso!')
+        getApiData(); 
         console.log(response)
       })
       .catch(err => console.error(err));
@@ -92,13 +93,18 @@ const Clientes = () => {
                     Editar
                   </NavLink>
                   &nbsp;
-                  <a
-                    onClick={deleteItem(cliente.id)}
+                  <button
+                    onClick={(e)=>{
+                      e.stopPropagation();
+                      e.preventDefault();
+                      deleteItem(cliente.id);
+                   }}
+                   
                     // to={`/clienteDelete/${cliente.id}`}
                     className="font-medium text-red-600 dark:text-red-500 hover:underline"
                   >
                     Excluir
-                  </a>
+                  </button>
               </td>
             </tr>
 
