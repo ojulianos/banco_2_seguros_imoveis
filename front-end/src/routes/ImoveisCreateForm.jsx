@@ -48,9 +48,9 @@ const ImoveisCreateForm = () => {
         const options = {
           method: "POST",
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "application/json",
           },
-          body: new URLSearchParams(novaApolice),
+          body: JSON.stringify(novaApolice),
         };
 
         fetch(
@@ -67,9 +67,9 @@ const ImoveisCreateForm = () => {
         const options = {
           method: "PUT",
           headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
+            "Content-Type": "application/json",
           },
-          body: new URLSearchParams(novaApolice),
+          body: JSON.stringify(novaApolice),
         };
 
         fetch(
