@@ -17,17 +17,18 @@ const ImoveisCreateForm = () => {
 
   if (id !== undefined || id !== null) {
     const getApiData = async () => {
-      const response = await fetch(
+      await fetch(
         `https://banco2segurosimoveis-production.up.railway.app/apolices/${id}`,
         { method: "GET" }
       )
         .then((response) => response.json())
         .then((response) => {
-          setNovoCliente(response.data);
-          console.log(response.data);
+          setNovoCliente(response);
+          console.log(response);
         })
         .catch((err) => console.error(err));
     };
+    getApiData();
   }
 
   const handleInputChange = (e) => {

@@ -13,8 +13,8 @@ const Imoveis = () => {
     const response = await fetch('https://banco2segurosimoveis-production.up.railway.app/apolices',  {method: 'GET'})
     .then(response => response.json())
     .then(response => {
-      setImoveis(response.data)
-      console.log(response.data)
+      setImoveis(response)
+      console.log(response)
     })
     .catch(err => console.error(err));
   };

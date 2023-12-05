@@ -10,11 +10,12 @@ const Clientes = () => {
   const [clientes, setClientes] = useState(defaultValue);
 
   const getApiData = async () => {
-    const response = await fetch('https://banco2segurosimoveis-production.up.railway.app/clientes',  {method: 'GET'})
+    await fetch('https://banco2segurosimoveis-production.up.railway.app/clientes',  {method: 'GET'})
     .then(response => response.json())
     .then(response => {
-      setClientes(response.data)
-      console.log(response.data)
+      setClientes(response)
+      console.log('clientes')
+      console.log(response)
     })
     .catch(err => console.error(err));
   };
@@ -76,7 +77,7 @@ const Clientes = () => {
           </thead>
           <tbody>
           
-          {clientes.map((cliente) => (
+          {clientes?.map((cliente) => (
             <tr className="bg-white border-b  dark:bg-gray-800 dark:border-gray-700" key={cliente.cli_cod}>
               <td className="px-6 py-4 ">{cliente.cli_nome}</td>
               <td className="px-6 py-4">{cliente.cli_documento}</td>
