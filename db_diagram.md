@@ -1,7 +1,7 @@
 Utilizado https://dbdiagram.io/
 
 ``` json
-
+-- Tabela de imoveis --
 table imoveis {
   im_cod int pk
   im_valor decimal(18,2)
@@ -13,12 +13,14 @@ table imoveis {
   im_tipo varchar(100)
   im_val_iptu decimal(18,2)
 }
+--tabela de fotos do imovel--
 table imovel_fotos {
   imf_cod INT pk
   imf_imovel_cod INT [ref: > imoveis.im_cod]
   imf_dt_cad DATETIME
   imf_arquivo VARCHAR(150)
 }
+-- tabela de clientes --
 table clientes {
   cli_cod int pk
   cli_dt_cad DATE 
@@ -37,6 +39,7 @@ table clientes {
   cli_mae VARCHAR(200)
   cli_rendimento DECIMAL(18,2)
 }
+-- tabela de apolices --
 table apolices {
   apo_cod INT PK
   apo_im_cod INT [ref: > imoveis.im_cod]
@@ -48,11 +51,13 @@ table apolices {
   apo_valor_cobertura DECIMAL(18,2)
   apo_valor_franquia DECIMAL(18,2)
 }
+-- tabela de itens da apolice --
 table apolice_itens{
   api_cod INT PK
   api_apo_cod INT [ref: > apolices.apo_cod]
   api_descricao VARCHAR(MAX)
 }
+-- tabela de sinistros --
 table sinistro{
   sin_cod INT PK
   sin_im_cod INT  [ref: > imoveis.im_cod]
@@ -60,13 +65,14 @@ table sinistro{
   sin_hr_cad TIME
   sin_sit_cod INT [ref: - sinistro_tipo.sit_cod]
   sin_tipo_cod INT
-} 
+}
+-- tabela de tipos de sinistro --
 table sinistro_tipo {
   sit_cod INT PK
   sit_nome VARCHAR(40)
   sit_pontos INT
 }
-
+-- tabela de log --
 table log{
   tabela VARCHAR(20)
   data_cadstro DATETIME
